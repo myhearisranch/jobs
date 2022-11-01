@@ -9,5 +9,4 @@ class ApplicationController < ActionController::Base
         return false if attendance.nil?
         !attendance.clock_out_at.nil?
     end
-    
 end
