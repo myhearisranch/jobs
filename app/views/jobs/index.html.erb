@@ -1,26 +1,31 @@
 <h3>勤怠状況</h3>
 <h3>本日の勤怠状況</h3>
 
-<%= form_with model: @attendance , local:true do |f| %>
+<%= form_with model: @attendance , url:'/jobs' ,  local:true do |f| %>
     <% if (!@is_clocked_in && !@is_clocked_out) %>
         <%= f.submit "出勤", class: "btn btn-primary" %>
     <% elsif @is_clocked_in && !@is_clocked_out %>
         <%= f.submit "退勤", class: "btn btn-primary" %>
+    <% else %>
+        <%= f.submit "退勤済み" , class: "btn btn-primary"%>
     <% end %>
 <% end %>
 
 <table>
     <% @attendances.each do |attendance| %>
         <tr>
+            <th>名前</th>
             <th>出勤時刻<th>
             <th>退勤時刻</th>
         <tr>
         <tr>
             <td>
-             <%= attendance.clock_in_at.to_s(:datetime_jp)%>
             </td>
             <td>
-             <%= attendance.clock_out_at.to_s(:datetime_jp)%>
+             <%= attendance.clock_in_at.to_s%>
+            </td>
+            <td>
+             <%= attendance.clock_out_at.to_s%>
             </td>
         </tr>
     <% end %>

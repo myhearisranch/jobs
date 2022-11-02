@@ -2,6 +2,10 @@ class JobsController < ApplicationController
 
     def index
         @attendances = Attendance.all
+        @attendance = current_user.attendances
+        last_attendance = current_user.today_attendance
+        @is_clocked_in = clock_in?(last_attendance)
+        @is_clocked_out = clock_out?(last_attendance)
     end
 
     def create
