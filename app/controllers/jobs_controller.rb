@@ -1,8 +1,7 @@
 class JobsController < ApplicationController
-    before_action :hoge, only: :index
 
     def index
-        @attendances = Attendance.all
+        @attendances = Attendance.where(created_at: Time.zone.now.all_day)
         @attendance = current_user.attendances
         last_attendance = current_user.today_attendance
         @is_clocked_in = clock_in?(last_attendance)
@@ -13,7 +12,7 @@ class JobsController < ApplicationController
         @attendance = current_user.today_attendance
         # 出席したかどうかという情報が入る
         is_clocked_in = clock_in?(@attendance)
-
+        
         # 退席したかどうかという情報が入る
         is_clocked_out = clock_out?(@attendance)
        
@@ -30,11 +29,5 @@ class JobsController < ApplicationController
 
     private
 
-    def hoge
-        Attendance.where("created_at<?",Time.now-(30.minutes)).delete_all
-    end
-
-    # https://teratail.com/questions/66535
-    # [Rails]一定時間が経過したら自動的に、ユーザーの投稿したデータを削除したい
 
 end
