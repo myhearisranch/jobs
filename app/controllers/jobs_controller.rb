@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+    before_action :hoge, only: :index
 
     def index
         @attendances = Attendance.all
@@ -26,4 +27,14 @@ class JobsController < ApplicationController
         @attendance.save
         redirect_to jobs_path
     end
+
+    private
+
+    def hoge
+        Attendance.where("created_at<?",Time.now-(30.minutes)).delete_all
+    end
+
+    # https://teratail.com/questions/66535
+    # [Rails]一定時間が経過したら自動的に、ユーザーの投稿したデータを削除したい
+
 end
