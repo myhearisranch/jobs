@@ -12,22 +12,28 @@
 <% end %>
 
 <table>
-    <% @attendances.each do |attendance| %>
+    <thead>
         <tr>
             <th>名前</th>
-            <th>出勤時刻<th>
-            <th>退勤時刻</th>
-        <tr>
+            <th>出席時刻</th>
+            <th>退席時刻</th>
+        </tr>
+    </thead>
+    <% @attendances.each do |attendance| %>    
+    <tbody>
         <tr>
             <td>
               <%= attendance.user.name %>
             </td>
+           
             <td>
-             <%= attendance.clock_in_at.to_s%>
+             <%= attendance.clock_in_at.to_s(:datetime_jp) %>
             </td>
+            
             <td>
-             <%= attendance.clock_out_at.to_s%>
+             <%= attendance.clock_out_at.to_s(:datetime_jp) %>
             </td>
         </tr>
+    </tbody>
     <% end %>
 </table>
