@@ -1,0 +1,33 @@
+<p>プロフィール画面<p>
+
+<div>
+    <%= @user.name %>
+    <%= @user.attendances.count %>件
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>名前</th>
+            <th>出席時刻</th>
+            <th>退席時刻</th>
+        </tr>
+    </thead>
+    <% @attendances.each do |attendance| %>    
+    <tbody>
+        <tr>
+            <td>
+              <%= attendance.user.name %>
+            </td>
+           
+            <td>
+             <%= attendance.clock_in_at.to_s(:datetime_jp) %>
+            </td>
+            
+            <td>
+             <%= attendance.clock_out_at.to_s(:datetime_jp) %>
+            </td>
+        </tr>
+    </tbody>
+    <% end %>
+</table>
