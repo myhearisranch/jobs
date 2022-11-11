@@ -8,3 +8,5 @@
 
 User.create(email: '1@1', name: '田中涼雅',password: '123456')
 User.create(email: '2@2', name: '松尾芭蕉', password: '123456')
+
+

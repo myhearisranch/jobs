@@ -15,7 +15,6 @@ class JobsController < ApplicationController
         
         # 退席したかどうかという情報が入る
         is_clocked_out = clock_out?(@attendance)
-        
         if !is_clocked_in && !is_clocked_out
             @attendance = current_user.attendances.build(clock_in_at: Time.zone.now)
             flash[:success] = "部活に参加しました。"
@@ -23,7 +22,7 @@ class JobsController < ApplicationController
             @attendance.clock_out_at = Time.zone.now
             flash[:success] = "部活を終えました。"
         end
-        @attendance.save!
+        @attendance.save
         redirect_to jobs_path
     end
 
