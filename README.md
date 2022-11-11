@@ -27,5 +27,5 @@
 <img width="405" alt="6" src="https://user-images.githubusercontent.com/87411323/201294997-6c834060-a1fc-403e-9c98-c846a92f10fa.PNG">
 
 ## 開発環境の立ち上げ方
-下記のコマンドを実行する
+- 下記のコマンドを実行する<br>
 bin/rails db:migrate
