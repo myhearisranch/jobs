@@ -35,7 +35,7 @@
 - bin/rails s
 
 ###### ● ユーザーのログイン
-- name: 松尾芭蕉
+- name: 山田太郎
 - password 123456
 
 
