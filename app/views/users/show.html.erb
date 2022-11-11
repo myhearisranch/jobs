@@ -5,6 +5,17 @@
     <%= @user.attendances.count %>件
 </div>
 
+<%= form_with(model: @user  , local:true) do |f| %>
+    <p>活動曜日</p>
+    <span class = "checkbox-inline">
+        <% weekly_columns.each_with_index do |day,i| %>
+            <%= f.check_box day.to_sym , {} , "true", "false" %>
+            <%= f.label day.to_sym , ["月","火","水","木","金","土","日"][i] %>
+        <% end %>
+    </span>
+    <%= f.submit "シフト提出" %>
+<% end %>
+
 <table>
     <thead>
         <tr>
@@ -31,3 +42,10 @@
     </tbody>
     <% end %>
 </table>
+
+<p>活動曜日</p>
+<%  weekly_columns.each_with_index do |day,i| %>
+    <% if @user[day] == true %>
+     <a><%= ["月","火","水","木","金","土","日"][i] %></a>
+    <% end %>
+<% end %>
