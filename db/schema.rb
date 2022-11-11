@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2022_11_01_162728) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
+    t.boolean "activity_monday"
+    t.boolean "activity_tuesday"
+    t.boolean "activity_wednesday"
+    t.boolean "activity_thursday"
+    t.boolean "activity_friday"
+    t.boolean "activity_saturday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

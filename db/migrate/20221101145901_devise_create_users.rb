@@ -33,6 +33,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.string :name
+
+      t.boolean :activity_monday
+      t.boolean :activity_tuesday
+      t.boolean :activity_wednesday
+      t.boolean :activity_thursday
+      t.boolean :activity_friday
+      t.boolean :activity_saturday
+      
       t.timestamps null: false
     end
 
