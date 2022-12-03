@@ -41,6 +41,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.boolean :activity_friday
       t.boolean :activity_saturday
       
+      t.date "day"
+
       t.timestamps null: false
     end
 

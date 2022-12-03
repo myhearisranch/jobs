@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2022_11_01_162728) do
     t.boolean "activity_thursday"
     t.boolean "activity_friday"
     t.boolean "activity_saturday"
+    t.date "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

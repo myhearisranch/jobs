@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
   get 'jobs' => 'jobs#index'
+  get 'calenders' => 'users#calender'
   post 'jobs' => 'jobs#create'
   
   devise_for :users
