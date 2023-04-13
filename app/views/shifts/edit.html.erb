@@ -1,0 +1,21 @@
+<h1>スケジュールの編集</h1>
+<%= form_with model: @shift, url: shift_path do |form| %>
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_local_field :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_local_field :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "更新する" %>
+  </div>
+<% end %>

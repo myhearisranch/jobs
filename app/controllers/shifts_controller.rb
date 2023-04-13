@@ -7,7 +7,7 @@ class ShiftsController < ApplicationController
   def create
     @shift = Shift.new(shift_params)
     if @shift.save
-     #redirect_to shifts_path,  notice: "スケジュールを作成しました。"
+     redirect_to shifts_path, notice: 'シフトを登録しました。'
     else
       render :new
     end
@@ -17,7 +17,18 @@ class ShiftsController < ApplicationController
     @shifts = Shift.all
   end
 
-  
+  def edit
+    @shift = Shift.find(params[:id])
+  end
+
+  def update
+    @shift = Shift.find(params[:id])  
+    if @shift.update(shift_params)
+      redirect_to shifts_path, notice: 'シフトを更新しました。'
+    else
+      render :edit
+    end
+  end
 
   private
   def shift_params
