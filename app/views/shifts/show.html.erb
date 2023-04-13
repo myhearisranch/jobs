@@ -1,0 +1,20 @@
+<h1>スケジュール詳細</h1>
+<table>
+  <thead>
+    <tr>
+      <th>日時</th>
+      <th>担当者</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @shift.start_time.strftime('%Y/%m/%d %H:%M') %> 〜 <%= @shift.end_time.strftime('%Y/%m/%d %H:%M') %></td>
+      <td><%= @shift.user.name %></td>
+      <td>
+        <%= link_to "編集", edit_shift_path(@shift.id) %>
+        <%= link_to "削除", shift_path(@shift.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      </td>
+    </tr>
+  </tbody>
+</table>

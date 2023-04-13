@@ -5,21 +5,6 @@
     <%= @user.attendances.count %>件
 </div>
 
-<%= form_with model: @event, local: true do |f| %>
-    <%= f.label :sunday, "日" %>
-    <%= f.check_box :sunday %>
-
-    <%= f.label :monday, "月" %>
-    <%= f.check_box :monday %>
-
-    <%= f.label :tuesday, "火" %>
-    <%= f.check_box :tuesday %>
-
-    <%= f.label :wednesday, "水" %>
-    <%= f.check_box :wednesday %>
-<% end %>
-
-
 <table>
     <thead>
         <tr>
@@ -46,10 +31,3 @@
     </tbody>
     <% end %>
 </table>
-
-<p>活動曜日</p>
-<%  weekly_columns.each_with_index do |day,i| %>
-    <% if @user[day] == true %>
-     <a><%= ["月","火","水","木","金","土","日"][i] %></a>
-    <% end %>
-<% end %>

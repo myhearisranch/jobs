@@ -1,5 +1,4 @@
 class ShiftsController < ApplicationController
-  # スケジュールの新規作成画面を表示する
   def new
     @shift = Shift.new
   end
@@ -15,6 +14,10 @@ class ShiftsController < ApplicationController
 
   def index
     @shifts = Shift.all
+  end
+
+  def show
+    @shift = Shift.find(params[:id])
   end
 
   def edit
@@ -40,6 +43,4 @@ class ShiftsController < ApplicationController
   def shift_params
     params.require(:shift).permit(:start_time, :end_time, :user_id)
   end
-
- 
 end
