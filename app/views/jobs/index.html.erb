@@ -7,7 +7,7 @@
     <% elsif @is_clocked_in && !@is_clocked_out %>
         <%= f.submit "退勤", class: "btn btn-primary" %>
     <% else %>
-        <%= f.submit "退勤済み" , class: "btn btn-primary"%>
+        <%= f.submit "退勤済み" ,  class: "btn btn-primary", disabled: true %>
     <% end %>
 <% end %>
 
@@ -27,13 +27,15 @@
             </td>
            
             <td>
-                <%= attendance.clock_in_at.to_s(:datetime_jp)  %>
+                <%= attendance.clock_in_at.strftime('%Y/%m/%d %H:%M:%S')  %>
             </td>
             
             <td>
-            
-                <%= attendance.clock_out_at.to_s(:datetime_jp) %>
-                
+                <% if attendance.clock_out_at.present? %>
+                    <%= attendance.clock_out_at.strftime('%Y/%m/%d %H:%M:%S') %> 
+                <% else %>
+                    N/A
+                <% end %>
             </td>
         </tr>
     </tbody>
