@@ -37,6 +37,21 @@
                     N/A
                 <% end %>
             </td>
+             <% if attendance.favorited_by?(current_user) %>
+              <td>
+                <%= link_to job_favorites_path(attendance.id), method: :delete do %>
+                     <i class="fa fa-heart text-red" aria-hidden="true" style="color: red;"></i>
+                     <%= attendance.favorites.count %>
+                    <% end %>
+              </td>
+              <% else %>
+              <td>
+                <%= link_to job_favorites_path(attendance.id), method: :post do %>
+                     <i class="fa fa-heart text-blue" aria-hidden="true" style="color: blue;"></i>
+                     <%= attendance.favorites.count %>
+                    <% end %>
+              </td>
+              <% end %>
         </tr>
     </tbody>
     <% end %>

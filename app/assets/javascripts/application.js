@@ -15,6 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
 
 function set2fig(num) {
     // 桁数が1桁だったら先頭に0を加えて2桁に調整する
