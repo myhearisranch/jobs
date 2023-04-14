@@ -23,13 +23,13 @@
     <tbody>
         <tr>
             <td>
+             <%=  link_to user_path(attendance.user.id) do %>
               <%= attendance.user.name %>
+             <% end %>
             </td>
-           
             <td>
-                <%= attendance.clock_in_at.strftime('%Y/%m/%d %H:%M:%S')  %>
+             <%= attendance.clock_in_at.strftime('%Y/%m/%d %H:%M:%S')  %>
             </td>
-            
             <td>
                 <% if attendance.clock_out_at.present? %>
                     <%= attendance.clock_out_at.strftime('%Y/%m/%d %H:%M:%S') %> 
