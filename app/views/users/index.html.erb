@@ -1,7 +1,9 @@
 <h1>出席数:</h1>
 <% @users.each do |user| %>
     <div>
+      <%= link_to user_path(user.id) do %>
         <%= user.name %>
+      <% end %>
         <%= user.attendances.count%>件
     </div>
 <% end %>
