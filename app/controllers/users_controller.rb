@@ -32,6 +32,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def edit
+      @user = User.find(params[:id])
+    end
+
     def update
       @user = User.find(params[:id])
       @user.update(user_params)
@@ -41,7 +45,6 @@ class UsersController < ApplicationController
   
     private 
     def user_params
-      params.require(:user).permit(:activity_monday,:activity_tuesday,:activity_wednesday,:activity_thursday,:activity_friday,:activity_saturday)
+      params.require(:user).permit(:name)
     end
-
 end
