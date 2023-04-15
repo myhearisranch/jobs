@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   
-  devise_for :users, skip: [:registrations]
+  devise_for :users
   resources :users, only:[:index, :show, :update, :edit]
   resources :shifts
   resources :rooms
