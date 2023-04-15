@@ -1,7 +1,7 @@
 <h1>スケジュール一覧</h1>
 
-<table>
-  <thead>
+<table class="table table-hover">
+  <thead class="thead-dark">
     <tr>
       <th>日時</th>
       <th>担当者</th>
@@ -14,13 +14,13 @@
         <td><%= shift.start_time.strftime('%Y/%m/%d %H:%M') %> 〜 <%= shift.end_time.strftime('%Y/%m/%d %H:%M') %></td>
         <td><%= shift.user.name %></td>
         <td>
-          <%= link_to "詳細", shift_path(shift) %>
-          <%= link_to "編集", edit_shift_path(shift) %>
-          <%= link_to "削除", shift_path(shift), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+          <%= link_to "<i class='fas fa-info'></i>".html_safe, shift_path(shift), class: "btn btn-info btn-sm mr-1", title: "詳細" %>
+          <%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_shift_path(shift), class: "btn btn-primary btn-sm mr-1", title: "編集" %>
+          <%= link_to "<i class='fas fa-trash'></i>".html_safe, shift_path(shift), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm", title: "削除" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "新規作成", new_shift_path %>
+<%= link_to "<i class='fas fa-plus'></i> 新規作成".html_safe, new_shift_path, class: "btn btn-success mb-3", title: "新規作成" %>
