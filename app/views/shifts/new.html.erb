@@ -1,21 +1,23 @@
-<h1>スケジュールの新規作成</h1>
-<%= form_with model: @shift, url: shifts_path do |form| %>
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_local_field :start_time %>
+<h1 class="mb-4">スケジュールの新規作成</h1>
+
+<%= form_with model: @shift, url: shifts_path, class: "row g-3" do |form| %>
+  <div class="col-md-6">
+    <%= form.label :start_time, class: "form-label" %>
+    <%= form.datetime_local_field :start_time, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_local_field :end_time %>
+  <div class="col-md-6">
+    <%= form.label :end_time, class: "form-label" %>
+    <%= form.datetime_local_field :end_time, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :name %>
+  <div class="col-md-12">
+    <%= form.label :user_id, "担当者", class: "form-label" %>
+    <%= form.collection_select :user_id, User.all, :id, :name, { prompt: "選択してください" }, class: "form-select" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "作成する" %>
+  <div class="col-12 mt-4">
+    <%= form.submit "作成する", class: "btn btn-primary" %>
+    <%= link_to "戻る", shifts_path, class: "btn btn-secondary ms-2" %>
   </div>
 <% end %>

@@ -1,29 +1,28 @@
-
 <h2>メッセージ一覧</h2>
 <% @anotherEntries.each do |e| %>
-    <table class="table table-striped">
-        <tr>
- 	        <td>
-            <!-- 名前からroomの詳細に飛べるようにリンク化 -->
-	          <%= link_to room_path(e.room.id) do %>
-			        <%= e.user.name %>
-		        <% end %>
-		    </td>
-		    <td>
-               <!-- 最新メッセージ内容の最初の7文字を表示する -->
-			   <% if dm = DirectMessage.find_by(id: e.room.direct_message_ids.last) %>
-            <%= truncate(dm.content, length: 10) %>
-          <% end %>
-		    </td>
-		    <td>
-		        <h6 style="color: #C0C0C0;"><%= e.updated_at.strftime("%Y/%m/%d %H:%M") %></h6>
-		    </td>
-		    <td>
-               <!-- ゴミ箱アイコンクリックでroomを消せるようにする -->
-			    <%= link_to room_path(e.room.id), method: :delete do %>
-				    <i class="fas fa-trash" style="color: black;"></i>
-			    <% end %>
-		    </td>
-	    </tr>
-	</table>
+  <div class="card my-3">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <!-- 名前からroomの詳細に飛べるようにリンク化 -->
+        <%= link_to room_path(e.room.id), class: "text-decoration-none" do %>
+          <h5 class="card-title"><%= e.user.name %></h5>
+        <% end %>
+
+        <% if dm = DirectMessage.find_by(id: e.room.direct_message_ids.last) %>
+          <!-- 最新メッセージ内容の最初の10文字を表示する -->
+          <p class="card-text"><%= truncate(dm.content, length: 10) %></p>
+        <% end %>
+
+        <!-- 更新日時を表示 -->
+        <small style="color: #C0C0C0;"><%= e.updated_at.strftime("%Y/%m/%d %H:%M") %></small>
+      </div>
+
+      <div>
+        <!-- ゴミ箱アイコンクリックでroomを消せるようにする -->
+        <%= link_to room_path(e.room.id), method: :delete, class: "text-decoration-none" do %>
+          <i class="fas fa-trash fa-lg text-secondary"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>

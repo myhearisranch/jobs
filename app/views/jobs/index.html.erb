@@ -1,61 +1,63 @@
-<h3>勤怠状況</h3>
-<h3>本日の勤怠状況</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="mb-4">勤怠状況</h3>
+      <h3 class="mb-4">本日の勤怠状況</h3>
 
-<%= form_with model: @attendance , url:'/jobs' ,  local:true do |f| %>
-    <% if (!@is_clocked_in && !@is_clocked_out) %>
-        <%= f.submit "出勤", class: "btn btn-primary" %>
-    <% elsif @is_clocked_in && !@is_clocked_out %>
-        <%= f.submit "退勤", class: "btn btn-primary" %>
-    <% else %>
-        <%= f.submit "退勤済み" ,  class: "btn btn-primary", disabled: true %>
-    <% end %>
-<% end %>
+      <%= form_with model: @attendance , url:'/jobs' ,  local:true do |f| %>
+        <% if (!@is_clocked_in && !@is_clocked_out) %>
+          <%= f.submit "出勤", class: "btn btn-primary" %>
+        <% elsif @is_clocked_in && !@is_clocked_out %>
+          <%= f.submit "退勤", class: "btn btn-primary" %>
+        <% else %>
+          <%= f.submit "退勤済み" ,  class: "btn btn-primary", disabled: true %>
+        <% end %>
+      <% end %>
 
-<table>
-    <thead>
-        <tr>
+      <table class="table table-striped mt-4">
+        <thead>
+          <tr>
             <th>名前</th>
             <th>出席時刻</th>
             <th>退席時刻</th>
-        </tr>
-    </thead>
-    <% @attendances.each do |attendance| %>    
-    <tbody>
-        <tr>
-            <td>
-             <%=  link_to user_path(attendance.user.id) do %>
-              <%= attendance.user.name %>
-             <% end %>
-            </td>
-            <td>
-             <%= attendance.clock_in_at.strftime('%Y/%m/%d %H:%M:%S')  %>
-            </td>
-            <td>
-                <% if attendance.clock_out_at.present? %>
-                    <%= attendance.clock_out_at.strftime('%Y/%m/%d %H:%M:%S') %> 
-                <% else %>
-                    N/A
+            <th>いいね数</th>
+          </tr>
+        </thead>
+        <% @attendances.each do |attendance| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to user_path(attendance.user.id) do %>
+                  <%= attendance.user.name %>
                 <% end %>
-            </td>
-             <% if attendance.favorited_by?(current_user) %>
-              <td>
-                <%= link_to job_favorites_path(attendance.id), method: :delete do %>
-                     <i class="fa fa-heart text-red" aria-hidden="true" style="color: red;"></i>
-                     <%= attendance.favorites.count %>
-                    <% end %>
               </td>
-              <% else %>
               <td>
-                <%= link_to job_favorites_path(attendance.id), method: :post do %>
-                     <i class="fa fa-heart text-blue" aria-hidden="true" style="color: blue;"></i>
-                     <%= attendance.favorites.count %>
-                    <% end %>
+                <%= attendance.clock_in_at.strftime('%Y/%m/%d %H:%M:%S')  %>
               </td>
-              <% end %>
-        </tr>
-    </tbody>
-    <% end %>
-</table>
-
-
-
+              <td>
+                <% if attendance.clock_out_at.present? %>
+                  <%= attendance.clock_out_at.strftime('%Y/%m/%d %H:%M:%S') %> 
+                <% else %>
+                  N/A
+                <% end %>
+              </td>
+              <td>
+                <% if attendance.favorited_by?(current_user) %>
+                  <%= link_to job_favorites_path(attendance.id), method: :delete do %>
+                    <i class="fa fa-heart text-danger" aria-hidden="true"></i>
+                    <%= attendance.favorites.count %>
+                  <% end %>
+                <% else %>
+                  <%= link_to job_favorites_path(attendance.id), method: :post do %>
+                    <i class="fa fa-heart text-primary" aria-hidden="true"></i>
+                    <%= attendance.favorites.count %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

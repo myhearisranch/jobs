@@ -1,20 +1,25 @@
-<h1>スケジュール詳細</h1>
-<table>
-  <thead>
-    <tr>
-      <th>日時</th>
-      <th>担当者</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @shift.start_time.strftime('%Y/%m/%d %H:%M') %> 〜 <%= @shift.end_time.strftime('%Y/%m/%d %H:%M') %></td>
-      <td><%= @shift.user.name %></td>
-      <td>
-        <%= link_to "編集", edit_shift_path(@shift.id) %>
-        <%= link_to "削除", shift_path(@shift.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<h1 class="text-center mb-4">スケジュール詳細</h1>
+
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>日時</th>
+          <th>担当者</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @shift.start_time.strftime('%Y/%m/%d %H:%M') %> 〜 <%= @shift.end_time.strftime('%Y/%m/%d %H:%M') %></td>
+          <td><%= @shift.user.name %></td>
+          <td>
+            <%= link_to "<i class='fas fa-edit'></i>".html_safe, edit_shift_path(@shift.id), class: "btn btn-secondary btn-sm" %>
+            <%= link_to "<i class='fas fa-trash'></i>".html_safe, shift_path(@shift.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
