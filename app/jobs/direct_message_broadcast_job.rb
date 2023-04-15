@@ -11,3 +11,4 @@ class DirectMessageBroadcastJob < ApplicationJob
       ApplicationController.renderer.render partial: 'direct_messages/direct_message', locals: { direct_message: direct_message }
     end
 end
+
