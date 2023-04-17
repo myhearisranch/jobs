@@ -1,0 +1,36 @@
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/msgpack-1.6.0/ext/msgpack
+/root/.rbenv/versions/2.5.1/bin/ruby -I /root/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 extconf.rb
+checking for ruby/st.h... yes
+checking for st.h... yes
+checking for rb_enc_interned_str() in ruby.h... no
+checking for rb_hash_new_capa() in ruby.h... no
+creating Makefile
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/msgpack-1.6.0/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-o4h6e6 sitelibdir\=./.gem.20230416-81-o4h6e6 clean
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/msgpack-1.6.0/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-o4h6e6 sitelibdir\=./.gem.20230416-81-o4h6e6
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+compiling buffer.c
+compiling buffer_class.c
+compiling extension_value_class.c
+compiling factory_class.c
+compiling packer.c
+compiling packer_class.c
+compiling packer_ext_registry.c
+compiling rbinit.c
+compiling rmem.c
+compiling unpacker.c
+compiling unpacker_class.c
+compiling unpacker_ext_registry.c
+linking shared-object msgpack/msgpack.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/msgpack-1.6.0/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-o4h6e6 sitelibdir\=./.gem.20230416-81-o4h6e6 install
+make: Warning: File 'Makefile' has modification time 4947 s in the future
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20230416-81-o4h6e6/msgpack
+make: warning:  Clock skew detected.  Your build may be incomplete.

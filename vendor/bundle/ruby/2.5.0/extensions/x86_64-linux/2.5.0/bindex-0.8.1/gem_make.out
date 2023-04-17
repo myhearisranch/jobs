@@ -1,0 +1,21 @@
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/root/.rbenv/versions/2.5.1/bin/ruby -I /root/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-1bx24eg sitelibdir\=./.gem.20230416-81-1bx24eg clean
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-1bx24eg sitelibdir\=./.gem.20230416-81-1bx24eg
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-1bx24eg sitelibdir\=./.gem.20230416-81-1bx24eg install
+make: Warning: File 'Makefile' has modification time 4956 s in the future
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20230416-81-1bx24eg/skiptrace/internal
+make: warning:  Clock skew detected.  Your build may be incomplete.

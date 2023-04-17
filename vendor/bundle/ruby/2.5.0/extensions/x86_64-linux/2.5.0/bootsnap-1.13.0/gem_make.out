@@ -1,0 +1,33 @@
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.13.0/ext/bootsnap
+/root/.rbenv/versions/2.5.1/bin/ruby -I /root/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-119jxov sitelibdir\=./.gem.20230416-81-119jxov clean
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-119jxov sitelibdir\=./.gem.20230416-81-119jxov
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+compiling bootsnap.c
+bootsnap.c: In function ‘bs_rb_fetch’:
+bootsnap.c:313:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  313 |   char * cachedir = RSTRING_PTR(cachedir_v);
+      |   ^~~~
+bootsnap.c: In function ‘bs_rb_precompile’:
+bootsnap.c:340:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+  340 |   char * cachedir = RSTRING_PTR(cachedir_v);
+      |   ^~~~
+bootsnap.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+linking shared-object bootsnap/bootsnap.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-119jxov sitelibdir\=./.gem.20230416-81-119jxov install
+make: Warning: File 'Makefile' has modification time 4956 s in the future
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20230416-81-119jxov/bootsnap
+make: warning:  Clock skew detected.  Your build may be incomplete.

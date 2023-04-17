@@ -1,0 +1,21 @@
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/root/.rbenv/versions/2.5.1/bin/ruby -I /root/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 extconf.rb
+creating Makefile
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-hlj262 sitelibdir\=./.gem.20230416-81-hlj262 clean
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-hlj262 sitelibdir\=./.gem.20230416-81-hlj262
+make: Warning: File 'Makefile' has modification time 4957 s in the future
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /mnt/c/Users/81909/Desktop/jobs/vendor/bundle/ruby/2.5.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230416-81-hlj262 sitelibdir\=./.gem.20230416-81-hlj262 install
+make: Warning: File 'Makefile' has modification time 4956 s in the future
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20230416-81-hlj262
+make: warning:  Clock skew detected.  Your build may be incomplete.
